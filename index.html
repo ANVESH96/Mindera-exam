@@ -1,0 +1,50 @@
+<html>
+  <link rel="stylesheet" href="styling.css" />
+  <head>
+    <script type="text/javascript" src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="tansition.js"></script> -->
+
+    <script>
+      $(document).ready(function() {
+        $("#controlRight").click(function() {
+          event.preventDefault();
+          $("#content").animate(
+            {
+              marginLeft: "-=340px"
+            },
+            "fast"
+          );
+        });
+
+        $("#controlLeft").click(function() {
+          event.preventDefault();
+          $("#content").animate(
+            {
+              marginLeft: "+=340px"
+            },
+            "fast"
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="main">
+      <h2 id="heading">Card Slider</h2>
+
+      <div id="wrapper">
+        <!-- Here begins the carosuel wrapper -->
+        <div id="module">
+          <ul id="content"></ul>
+          </ul>
+        </div>
+      </div>
+      <div class="controls">
+        <i id="controlLeft" class="left" role="button"></i>
+        <i id="controlRight" class="right" role="button"></i>
+      </div>
+      <!-- Here ends the carosuel wrapper -->
+    </div>
+  </body>
+</html>
