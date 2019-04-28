@@ -1,50 +1,31 @@
+<!DOCTYPE html>
 <html>
-  <link rel="stylesheet" href="styling.css" />
   <head>
+    <!-- Reference to styling sheet -->
+    <link rel="stylesheet" href="styling.css" />
+    <!-- Javascript to get the data from JSON server -->
+    <script></script>
     <script type="text/javascript" src="index.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
-    <script>
-      // $(document).ready(function() {
-      //   $("#controlRight").click(function() {
-      //     event.preventDefault();
-      //     $("#content").animate(
-      //       {
-      //         marginLeft: "-=340px"
-      //       },
-      //       "fast"
-      //     );
-      //   });
-
-      //   $("#controlLeft").click(function() {
-      //     event.preventDefault();
-      //     $("#content").animate(
-      //       {
-      //         marginLeft: "+=340px"
-      //       },
-      //       "fast"
-      //     );
-      //   });
-      // });
-    </script>
+    <script type="text/javascript" src="navigate.js"></script>
   </head>
+  <!-- Body of the HTML DOM -->
   <body>
     <div id="main">
-      <h2 id="heading">Card Slider</h2>
-
+      <!-- Here begins the Card Slider wrapper -->
       <div id="wrapper">
-        <!-- Here begins the carosuel wrapper -->
+        <!-- Card Slider Module to hold the list of cards -->
         <div id="module">
+          <!-- Card list begins -->
           <ul id="content"></ul>
-          </ul>
+          <!-- All the dynamic list of cards will be nested here -->
         </div>
       </div>
+      <!-- UI controls to navigate card slider -->
       <div class="controls">
-        <i  id="controlLeft" class="left" role="button"></i>
+        <i id="controlLeft" class="left" role="button"></i>
         <i id="controlRight" class="right" role="button"></i>
+        <!-- Here ends the Card Slider wrapper -->
       </div>
-      <!-- Here ends the carosuel wrapper -->
     </div>
   </body>
-  <script type="text/javascript" src="transition.js"></script>
 </html>
