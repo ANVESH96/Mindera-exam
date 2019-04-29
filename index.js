@@ -4,14 +4,14 @@ function createNode(element) {
     return document.createElement(element); // Create the type of element you pass in the parameters
   }
 
-function assignclassName(element,classname){
+function assignclassName(element,classname){   //Assign classnames to elemenst
     return element.className= classname
   }
-
-function appendchild(parent,child){
+ 
+function appendchild(parent,child){           //Append child to parent
     return parent.appendChild(child)
 }
-function insertinnerHTML(element,value){
+function insertinnerHTML(element,value){     //Insert inner HTML values to specified elements
   return element.innerHTML=value
 }
 
