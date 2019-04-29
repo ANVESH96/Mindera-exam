@@ -4,6 +4,16 @@ function createNode(element) {
     return document.createElement(element); // Create the type of element you pass in the parameters
   }
 
+function assignclassName(element,classname){
+    return element.className= classname
+  }
+
+function appendchild(parent,child){
+    return parent.appendChild(child)
+}
+function insertinnerHTML(element,value){
+  return element.innerHTML=value
+}
 
 fetch(data)                                //Fetch data from the JSON api
 .then((resp) => resp.json())               //Conver the data to JSON
@@ -23,29 +33,30 @@ fetch(data)                                //Fetch data from the JSON api
       const  learnmore=createNode('p')
       const  imagenode =createNode('img')
 
-      div.className="card"                               //create  ClassNames for the respective HMTL tags above
-      cardimage.className="card-image"
-      cardcontainer.className="card-container"
-      authorname.className="authorname"
-      cardtitle.className="cardtitle"
-      cardtext.className="cardtext"
-      learnmore.className="card-learnmore"
-
-      authorname.innerHTML=card.author                   //Insert data inside the HTML Tags         
-      cardtitle.innerHTML=card.title
-      cardtext.innerHTML=card.text
-      learnmore.innerHTML="Learn More"
+      assignclassName(div,"card")                               //create  ClassNames for the respective HMTL tags above
+      assignclassName(cardimage,"card-image")
+      assignclassName(cardcontainer,"card-container")
+      assignclassName(authorname,"authorname")
+      assignclassName(cardtitle,"cardtitle")
+      assignclassName(cardtext,"cardtext")
+      assignclassName(learnmore,"card-learnmore")
+                           
+      insertinnerHTML(authorname,card.author)                  //Insert data inside the HTML Tags
+      insertinnerHTML(cardtitle,card.title)
+      insertinnerHTML(cardtext,card.text)
+      insertinnerHTML(learnmore,"Learn More")
       imagenode.src=card.image_url
+                                                              
+      appendchild(ul,li)                                      // Create structural hierarchy   
+      appendchild(li,div)
+      appendchild(div,cardimage)
+      appendchild(div,cardcontainer)
+      appendchild(cardimage,imagenode)
+      appendchild(cardcontainer,authorname)
+      appendchild(cardcontainer,cardtitle)
+      appendchild(cardcontainer,cardtext)
+      appendchild(cardcontainer,learnmore)
 
-      ul.appendChild(li)                                // Create structural hierarchy
-      li.appendChild(div)
-      div.appendChild(cardimage)
-      div.appendChild(cardcontainer)
-      cardimage.appendChild(imagenode)
-      cardcontainer.appendChild(authorname)
-      cardcontainer.appendChild(cardtitle)
-      cardcontainer.appendChild(cardtext)
-      cardcontainer.appendChild(learnmore)
   })
   navigte();                                           //call the navigate function from navigate.js file
 })

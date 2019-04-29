@@ -11,6 +11,7 @@
   <!-- Body of the HTML DOM -->
   <body>
     <div id="main">
+      <template id="card-slider">
       <!-- Here begins the Card Slider wrapper -->
       <div id="wrapper">
         <!-- Card Slider Module to hold the list of cards -->
@@ -27,5 +28,10 @@
         <!-- Here ends the Card Slider wrapper -->
       </div>
     </div>
+  </template>
   </body>
+  <script>
+      var temp =document.getElementById("card-slider")
+      document.body.appendChild(temp.content.cloneNode(true))
+    </script>
 </html>
