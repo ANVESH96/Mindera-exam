@@ -20,3 +20,4 @@ If you want to retrieve just a subset, specify the lower and upper limit as quer
     http://127.0.0.1:3000/cards?_start=8&_end=12
 
 To acces the Card Slider Web Interface ,view the index.html file in browser.
+file:///{PATH-TO-HTML-FILE}/index.html
